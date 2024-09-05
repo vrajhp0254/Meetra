@@ -13,7 +13,7 @@ const Sidebar = () => {
       <div className="flex flex-1 flex-col gap-6">
         {sidebarLinks.map((link) => {
           const isActive =
-            pathname === link.url ;
+            pathname === link.url || pathname.startsWith(`${link.url}/`);
           return (
             <Link
               key={link.title}
@@ -25,8 +25,8 @@ const Sidebar = () => {
               <Image
               src={link.icon}
               alt={link.title}
-              width={20}
-              height={20}
+              width={24}
+              height={24}
               />
               <p className="font-semibold text-lg max-lg:hidden">
                 {link.title}
