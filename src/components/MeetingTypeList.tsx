@@ -11,8 +11,8 @@ import { useUser } from '@clerk/nextjs';
 import Loader from './Loader';
 import { Textarea } from './ui/textarea';
 import ReactDatePicker from 'react-datepicker';
-import { Input } from './ui/input';
 import { useToast } from '@/hooks/use-toast';
+import { Input } from './ui/input';
 
 const initialValues = {
   dateTime: new Date(),
@@ -112,7 +112,7 @@ const MeetingTypeList = () => {
             </label>
             <Textarea
               className="border-none bg-dark-3 focus-visible:ring-0 focus-visible:ring-offset-0"
-              onChange={(e:any) =>
+              onChange={(e) =>
                 setValues({ ...values, description: e.target.value })
               }
             />
@@ -123,7 +123,7 @@ const MeetingTypeList = () => {
             </label>
             <ReactDatePicker
               selected={values.dateTime}
-              onChange={(date:any) => setValues({ ...values, dateTime: date! })}
+              onChange={(date) => setValues({ ...values, dateTime: date! })}
               showTimeSelect
               timeFormat="HH:mm"
               timeIntervals={15}
@@ -159,7 +159,7 @@ const MeetingTypeList = () => {
       >
         <Input
           placeholder="Meeting link"
-          onChange={(e:any) => setValues({ ...values, link: e.target.value })}
+          onChange={(e) => setValues({ ...values, link: e.target.value })}
           className="border-none bg-dark-3 focus-visible:ring-0 focus-visible:ring-offset-0"
         />
       </MeetingModal>
