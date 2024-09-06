@@ -4,6 +4,7 @@ const protectedRouteMatcher = createRouteMatcher([
   "/",
   "/upcoming",
   "/previous",
+  "/recordings",
   "/personal-room",
   '/mettings/(.*)'
 ]);
