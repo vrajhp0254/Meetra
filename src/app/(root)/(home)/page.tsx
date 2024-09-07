@@ -1,26 +1,11 @@
 "use client"
-import Loader from '@/components/Loader';
 import MeetingTypeList from '@/components/MeetingTypeList';
-import { useGetCalls } from '@/hooks/useGetCalls';
-import { Call } from '@stream-io/video-react-sdk';
-import { log } from 'console';
 
 const Home = () => {
   const now = new Date();
 
   const time = now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
   const date = (new Intl.DateTimeFormat('en-US', { dateStyle: 'full' })).format(now);
-
-  const {isLoading,upcomingCalls} = useGetCalls();
-  
-  const realtime =upcomingCalls?.map((call: Call) => call.state.startsAt);
-  const upcomingtime =realtime?.toLocaleString('en-US', { hour: '2-digit', minute: '2-digit' });
-
-  console.log( upcomingtime? upcomingtime.at(0): "No upcoming meeting");
-  
-  
-  
-  if (isLoading) return <Loader />;
 
   return (
     <section className="flex size-full flex-col gap-5 text-white">
